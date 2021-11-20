@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     void Pause()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 0f;
         scoreUI.SetActive(false);
         pauseUI.SetActive(true);
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Time.timeScale = 1f;
         pauseUI.SetActive(false);
         scoreUI.SetActive(true);
@@ -43,10 +45,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         isPaused = false;
         Time.timeScale = 1f;
+        Cursor.visible = false;
     }
 
     public void NewGame()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene(1);
     }
 

@@ -33,12 +33,25 @@ public class Ball : MonoBehaviour
             ScoreLeft++;
             LeftScore.text = ScoreLeft.ToString();
             Reset();
+            AudioManager.PlaySound(AudioManager.Sound.Win);
         }
+
         if (colision.gameObject.tag == "ScoreL")
         {
             ScoreRigth++;
             RigthScore.text = ScoreRigth.ToString();
             Reset();
+            AudioManager.PlaySound(AudioManager.Sound.Win);
+        }
+
+        if(colision.gameObject.tag == "Wall")
+        {
+            AudioManager.PlaySound(AudioManager.Sound.Wall);
+        }
+
+        if (colision.gameObject.tag == "Plataform")
+        {
+            AudioManager.PlaySound(AudioManager.Sound.Plataform);
         }
     }
 

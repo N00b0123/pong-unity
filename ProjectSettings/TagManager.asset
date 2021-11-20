@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ScoreL
   - ScoreR
+  - Wall
+  - Plataform
   layers:
   - Default
   - TransparentFX
